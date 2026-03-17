@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code } from "next/font/google";
+import { Inter, Fira_Code, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/lib/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -13,6 +14,12 @@ const inter = Inter({
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",
+});
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  variable: "--font-noto-sans-jp",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -29,15 +36,18 @@ export const metadata: Metadata = {
     "Japan",
     "Osaka",
     "Software Engineer",
+    "チュティア アディティア",
+    "フルスタック開発者",
   ],
   authors: [{ name: "Aditya Chutia" }],
   openGraph: {
     title: "Aditya Chutia | Full-Stack Developer",
     description:
       "Full-Stack Developer & AI Enthusiast based in Osaka, Japan. Building intelligent applications with Python, Django, React, and AI/ML technologies.",
-    url: "https://adityachutia.dev",
+    url: "https://adityachutiaportfolio.vercel.app",
     siteName: "Aditya Chutia Portfolio",
     locale: "en_US",
+    alternateLocale: "ja_JP",
     type: "website",
   },
   twitter: {
@@ -59,13 +69,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${firaCode.variable} font-sans`}>
+      <body className={`${inter.variable} ${firaCode.variable} ${notoSansJP.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <div className="min-h-screen flex flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <LanguageProvider>
+            <div className="min-h-screen flex flex-col">
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

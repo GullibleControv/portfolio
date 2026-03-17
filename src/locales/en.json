@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, my name is",
+    "name": "Aditya Chutia",
+    "roles": ["Full-Stack Developer", "AI Enthusiast", "Backend Engineer", "Problem Solver"],
+    "location": "Based in Osaka, Japan",
+    "description": "I build intelligent applications that solve real-world problems. Specializing in",
+    "skills": ["AI/ML", "Python/Django", "full-stack development"],
+    "viewWork": "View My Work",
+    "github": "GitHub",
+    "contactMe": "Contact Me",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "Me",
+    "bio1": "I'm a passionate",
+    "role": "Full-Stack Developer",
+    "bio1cont": "with a strong focus on building intelligent applications. Currently based in",
+    "locationHighlight": "Osaka, Japan",
+    "bio1end": ", I combine my love for clean code with cutting-edge AI technologies.",
+    "bio2": "I recently completed an internship at",
+    "company": "Japan AI Consulting",
+    "bio2cont": ", where I worked on production Django applications, built automated testing systems with Playwright, and collaborated on AI-powered solutions.",
+    "bio3": "My personal projects include an",
+    "project1": "AI-powered auto-reply SaaS",
+    "bio3cont": "using RAG technology and a",
+    "project2": "smart parking system",
+    "bio3end": "with YOLO real-time detection. I'm always excited to learn new technologies and tackle challenging problems.",
+    "degree": "B.Sc. Computer Science",
+    "jlpt": "JLPT N4",
+    "openTo": "Open to Opportunities",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "aiml": "AI/ML",
+      "databases": "Databases",
+      "devops": "DevOps",
+      "tools": "Tools"
+    }
+  },
+  "projects": {
+    "title": "Featured",
+    "titleHighlight": "Projects",
+    "subtitle": "Here are some of my recent projects that showcase my skills in full-stack development, AI/ML, and DevOps.",
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo",
+    "viewAll": "View All Projects",
+    "calbol": {
+      "subtitle": "AI Auto-Reply SaaS",
+      "description": "An AI-powered customer support automation platform using RAG (Retrieval Augmented Generation). Features hybrid response system combining keyword matching with AI, confidence scoring with automatic human escalation, and multi-platform support.",
+      "features": [
+        "RAG Pipeline for intelligent responses",
+        "Multi-platform: Email, WhatsApp, Instagram",
+        "Confidence scoring & human escalation",
+        "Bilingual support (EN/JA)"
+      ]
+    },
+    "intellipark": {
+      "subtitle": "AI Smart Parking System",
+      "description": "Real-time parking detection system using YOLO11 computer vision. Features polygon-based space mapping, booking system with conflict detection, and support for multiple video sources including YouTube and RTSP streams.",
+      "features": [
+        "YOLO11 real-time vehicle detection",
+        "Canvas-based polygon drawing",
+        "Booking system with conflict detection",
+        "Multi-source: YouTube, RTSP, Webcam"
+      ]
+    },
+    "animenews": {
+      "subtitle": "News Aggregator",
+      "description": "A Django-based news platform with automated ETL pipeline using Jikan API. Features complete Docker deployment with Nginx, SSL, and multi-platform deployment configurations for Render, Heroku, and Railway.",
+      "features": [
+        "Automated ETL pipeline",
+        "Docker 3-container architecture",
+        "Let's Encrypt SSL",
+        "Multi-platform deployment"
+      ]
+    }
+  },
+  "experience": {
+    "title": "Experience &",
+    "titleHighlight": "Education",
+    "subtitle": "My professional journey and academic background.",
+    "workTitle": "Work Experience",
+    "educationTitle": "Education",
+    "work": {
+      "title": "Software Engineer Intern",
+      "company": "Japan AI Consulting",
+      "location": "Japan",
+      "date": "Dec 2025 - Mar 2026",
+      "description": [
+        "Developed and maintained features for the company's main product using Django and Python",
+        "Built comprehensive E2E test automation suite using Playwright",
+        "Worked with Docker, PostgreSQL, and Redis for development and deployment",
+        "Collaborated with the team on bug fixes, feature implementation, and QA testing"
+      ]
+    },
+    "education": {
+      "title": "Bachelor of Science in Computer Science",
+      "company": "Assam Kaziranga University",
+      "location": "Assam, India",
+      "date": "Sep 2021 - May 2025",
+      "description": [
+        "Specialized in software development and computer science fundamentals",
+        "Developed multiple full-stack projects as part of coursework",
+        "Gained strong foundation in data structures, algorithms, and system design"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Get In",
+    "titleHighlight": "Touch",
+    "subtitle": "I'm currently looking for new opportunities in Japan. Whether you have a question or just want to say hi, feel free to reach out!",
+    "infoTitle": "Contact Information",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Osaka, Japan",
+    "connectTitle": "Connect With Me",
+    "statusTitle": "Open to Opportunities",
+    "statusText": "Currently seeking full-time positions in Japan. Available to start from April 2026.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "builtWith": "Built with",
+    "by": "by Aditya Chutia"
+  }
+}

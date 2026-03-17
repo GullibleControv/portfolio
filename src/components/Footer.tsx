@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Mail, Linkedin, Heart } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const socialLinks = [
   {
@@ -22,6 +23,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -35,9 +37,19 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-dark-500 dark:text-dark-400 text-sm flex items-center gap-1"
           >
-            Built with
-            <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-            by Aditya Chutia &copy; {currentYear}
+            {language === "en" ? (
+              <>
+                Built with
+                <Heart className="w-4 h-4 text-red-500 fill-red-500" />
+                by Aditya Chutia &copy; {currentYear}
+              </>
+            ) : (
+              <>
+                {t.footer.builtWith}
+                <Heart className="w-4 h-4 text-red-500 fill-red-500" />
+                {t.footer.by} &copy; {currentYear}
+              </>
+            )}
           </motion.p>
 
           {/* Social Links */}
@@ -68,7 +80,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-dark-500 dark:text-dark-400 text-sm"
           >
-            Osaka, Japan
+            {language === "en" ? "Osaka, Japan" : "大阪府"}
           </motion.p>
         </div>
       </div>

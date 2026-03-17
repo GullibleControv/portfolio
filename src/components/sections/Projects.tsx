@@ -2,60 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Bot, Car, Newspaper } from "lucide-react";
-
-const projects = [
-  {
-    title: "CalBol",
-    subtitle: "AI Auto-Reply SaaS",
-    description:
-      "An AI-powered customer support automation platform using RAG (Retrieval Augmented Generation). Features hybrid response system combining keyword matching with AI, confidence scoring with automatic human escalation, and multi-platform support.",
-    icon: Bot,
-    image: "/projects/calbol.png",
-    tags: ["Django", "OpenAI", "LangChain", "Celery", "PostgreSQL", "Redis"],
-    features: [
-      "RAG Pipeline for intelligent responses",
-      "Multi-platform: Email, WhatsApp, Instagram",
-      "Confidence scoring & human escalation",
-      "Bilingual support (EN/JA)",
-    ],
-    github: "https://github.com/GullibleControv/calbol",
-    color: "from-violet-500 to-purple-600",
-  },
-  {
-    title: "IntelliPark",
-    subtitle: "AI Smart Parking System",
-    description:
-      "Real-time parking detection system using YOLO11 computer vision. Features polygon-based space mapping, booking system with conflict detection, and support for multiple video sources including YouTube and RTSP streams.",
-    icon: Car,
-    image: "/projects/intellipark.png",
-    tags: ["Flask", "YOLO11", "OpenCV", "PostgreSQL", "Docker", "JavaScript"],
-    features: [
-      "YOLO11 real-time vehicle detection",
-      "Canvas-based polygon drawing",
-      "Booking system with conflict detection",
-      "Multi-source: YouTube, RTSP, Webcam",
-    ],
-    github: "https://github.com/GullibleControv/IntelliPark",
-    color: "from-blue-500 to-cyan-600",
-  },
-  {
-    title: "Anime News Platform",
-    subtitle: "News Aggregator",
-    description:
-      "A Django-based news platform with automated ETL pipeline using Jikan API. Features complete Docker deployment with Nginx, SSL, and multi-platform deployment configurations for Render, Heroku, and Railway.",
-    icon: Newspaper,
-    image: "/projects/anime-news.png",
-    tags: ["Django", "Docker", "Nginx", "PostgreSQL", "Jikan API"],
-    features: [
-      "Automated ETL pipeline",
-      "Docker 3-container architecture",
-      "Let's Encrypt SSL",
-      "Multi-platform deployment",
-    ],
-    github: "https://github.com/GullibleControv/Anime_News_Platform",
-    color: "from-pink-500 to-rose-600",
-  },
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -77,6 +24,41 @@ const cardVariants = {
 };
 
 export default function Projects() {
+  const { t } = useLanguage();
+
+  const projects = [
+    {
+      title: "CalBol",
+      subtitle: t.projects.calbol.subtitle,
+      description: t.projects.calbol.description,
+      icon: Bot,
+      tags: ["Django", "OpenAI", "LangChain", "Celery", "PostgreSQL", "Redis"],
+      features: t.projects.calbol.features,
+      github: "https://github.com/GullibleControv/calbol",
+      color: "from-violet-500 to-purple-600",
+    },
+    {
+      title: "IntelliPark",
+      subtitle: t.projects.intellipark.subtitle,
+      description: t.projects.intellipark.description,
+      icon: Car,
+      tags: ["Flask", "YOLO11", "OpenCV", "PostgreSQL", "Docker", "JavaScript"],
+      features: t.projects.intellipark.features,
+      github: "https://github.com/GullibleControv/IntelliPark",
+      color: "from-blue-500 to-cyan-600",
+    },
+    {
+      title: "Anime News Platform",
+      subtitle: t.projects.animenews.subtitle,
+      description: t.projects.animenews.description,
+      icon: Newspaper,
+      tags: ["Django", "Docker", "Nginx", "PostgreSQL", "Jikan API"],
+      features: t.projects.animenews.features,
+      github: "https://github.com/GullibleControv/Anime_News_Platform",
+      color: "from-pink-500 to-rose-600",
+    },
+  ];
+
   return (
     <section id="projects" className="section-padding bg-dark-50 dark:bg-dark-900/50">
       <div className="container-custom">
@@ -89,11 +71,10 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured <span className="gradient-text">Projects</span>
+            {t.projects.title} <span className="gradient-text">{t.projects.titleHighlight}</span>
           </h2>
           <p className="text-dark-600 dark:text-dark-400 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills in
-            full-stack development, AI/ML, and DevOps.
+            {t.projects.subtitle}
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full mt-4" />
         </motion.div>
@@ -173,7 +154,7 @@ export default function Projects() {
                   </div>
 
                   {/* Features */}
-                  <ul className="grid grid-cols-2 gap-2">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {project.features.map((feature) => (
                       <li
                         key={feature}
@@ -208,17 +189,8 @@ export default function Projects() {
                       whileTap={{ scale: 0.95 }}
                     >
                       <Github className="w-5 h-5" />
-                      <span>View Code</span>
+                      <span>{t.projects.viewCode}</span>
                     </motion.a>
-                    {/* <motion.a
-                      href="#"
-                      className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      <span>Live Demo</span>
-                    </motion.a> */}
                   </div>
                 </div>
               </div>
@@ -241,7 +213,7 @@ export default function Projects() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            View All Projects
+            {t.projects.viewAll}
             <ExternalLink className="w-4 h-4" />
           </motion.a>
         </motion.div>

@@ -2,40 +2,41 @@
 
 import { motion } from "framer-motion";
 import { Code2, Database, Cloud, Brain, Wrench, Globe } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const techCategories = [
   {
-    title: "Languages",
+    titleKey: "languages",
     icon: Code2,
     skills: ["Python", "JavaScript", "TypeScript", "HTML/CSS", "SQL"],
     color: "from-blue-500 to-cyan-500",
   },
   {
-    title: "Frameworks",
+    titleKey: "frameworks",
     icon: Globe,
     skills: ["Django", "Flask", "React", "Next.js", "Tailwind CSS"],
     color: "from-green-500 to-emerald-500",
   },
   {
-    title: "AI/ML",
+    titleKey: "aiml",
     icon: Brain,
     skills: ["OpenAI API", "LangChain", "YOLO", "OpenCV", "RAG"],
     color: "from-purple-500 to-pink-500",
   },
   {
-    title: "Databases",
+    titleKey: "databases",
     icon: Database,
     skills: ["PostgreSQL", "Redis", "SQLite", "Supabase"],
     color: "from-orange-500 to-red-500",
   },
   {
-    title: "DevOps",
+    titleKey: "devops",
     icon: Cloud,
     skills: ["Docker", "Nginx", "Git", "GitHub Actions", "Vercel"],
     color: "from-indigo-500 to-purple-500",
   },
   {
-    title: "Tools",
+    titleKey: "tools",
     icon: Wrench,
     skills: ["Celery", "Playwright", "Gunicorn", "VS Code", "Linux"],
     color: "from-yellow-500 to-orange-500",
@@ -62,6 +63,8 @@ const itemVariants = {
 };
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="section-padding">
       <div className="container-custom">
@@ -74,7 +77,7 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About <span className="gradient-text">Me</span>
+            {t.about.title} <span className="gradient-text">{t.about.titleHighlight}</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full" />
         </motion.div>
@@ -89,56 +92,52 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
-              I&apos;m a passionate{" "}
+              {t.about.bio1}{" "}
               <span className="text-primary-500 font-medium">
-                Full-Stack Developer
+                {t.about.role}
               </span>{" "}
-              with a strong focus on building intelligent applications. Currently
-              based in{" "}
-              <span className="text-primary-500 font-medium">Osaka, Japan</span>,
-              I combine my love for clean code with cutting-edge AI technologies.
+              {t.about.bio1cont}{" "}
+              <span className="text-primary-500 font-medium">{t.about.locationHighlight}</span>
+              {t.about.bio1end}
             </p>
 
             <p className="text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
-              I recently completed an internship at{" "}
+              {t.about.bio2}{" "}
               <span className="text-primary-500 font-medium">
-                Japan AI Consulting
+                {t.about.company}
               </span>
-              , where I worked on production Django applications, built automated
-              testing systems with Playwright, and collaborated on AI-powered
-              solutions.
+              {t.about.bio2cont}
             </p>
 
             <p className="text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
-              My personal projects include an{" "}
+              {t.about.bio3}{" "}
               <span className="text-primary-500 font-medium">
-                AI-powered auto-reply SaaS
+                {t.about.project1}
               </span>{" "}
-              using RAG technology and a{" "}
+              {t.about.bio3cont}{" "}
               <span className="text-primary-500 font-medium">
-                smart parking system
-              </span>{" "}
-              with YOLO real-time detection. I&apos;m always excited to learn new
-              technologies and tackle challenging problems.
+                {t.about.project2}
+              </span>
+              {t.about.bio3end}
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
                 <span className="text-2xl">🎓</span>
                 <span className="text-sm text-dark-600 dark:text-dark-300">
-                  B.Sc. Computer Science
+                  {t.about.degree}
                 </span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
                 <span className="text-2xl">🇯🇵</span>
                 <span className="text-sm text-dark-600 dark:text-dark-300">
-                  JLPT N4
+                  {t.about.jlpt}
                 </span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
                 <span className="text-2xl">💼</span>
                 <span className="text-sm text-dark-600 dark:text-dark-300">
-                  Open to Opportunities
+                  {t.about.openTo}
                 </span>
               </div>
             </div>
@@ -154,7 +153,7 @@ export default function About() {
           >
             {techCategories.map((category) => (
               <motion.div
-                key={category.title}
+                key={category.titleKey}
                 variants={itemVariants}
                 className="group p-4 bg-white dark:bg-dark-900 rounded-xl border border-dark-200 dark:border-dark-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all card-hover"
               >
@@ -164,7 +163,9 @@ export default function About() {
                   >
                     <category.icon className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="font-semibold text-sm">{category.title}</h3>
+                  <h3 className="font-semibold text-sm">
+                    {t.about.categories[category.titleKey as keyof typeof t.about.categories]}
+                  </h3>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {category.skills.map((skill) => (

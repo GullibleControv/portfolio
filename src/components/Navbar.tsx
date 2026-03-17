@@ -3,20 +3,22 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Menu, X, Sun, Moon, Github, Mail } from "lucide-react";
-
-const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
-];
+import { Menu, X, Sun, Moon, Github, Mail, Globe } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.experience, href: "#experience" },
+    { name: t.nav.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -26,6 +28,10 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "ja" : "en");
+  };
 
   return (
     <motion.nav
@@ -51,12 +57,12 @@ export default function Navbar() {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link, index) => (
               <motion.a
-                key={link.name}
+                key={link.href}
                 href={link.href}
-                className="text-dark-600 dark:text-dark-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors link-underline"
+                className="text-dark-600 dark:text-dark-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors link-underline text-sm"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -64,6 +70,20 @@ export default function Navbar() {
                 {link.name}
               </motion.a>
             ))}
+
+            {/* Language Toggle */}
+            {mounted && (
+              <motion.button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-dark-100 dark:bg-dark-800 hover:bg-dark-200 dark:hover:bg-dark-700 transition-colors text-sm font-medium"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Toggle language"
+              >
+                <Globe className="w-4 h-4" />
+                <span>{language === "en" ? "日本語" : "EN"}</span>
+              </motion.button>
+            )}
 
             {/* Theme Toggle */}
             {mounted && (
@@ -106,7 +126,18 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-3 md:hidden">
+            {/* Language Toggle Mobile */}
+            {mounted && (
+              <motion.button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1 px-2 py-1 rounded-lg bg-dark-100 dark:bg-dark-800 text-xs font-medium"
+                whileTap={{ scale: 0.9 }}
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>{language === "en" ? "JA" : "EN"}</span>
+              </motion.button>
+            )}
             {mounted && (
               <motion.button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -143,7 +174,7 @@ export default function Navbar() {
             <div className="container-custom py-4 space-y-4">
               {navLinks.map((link, index) => (
                 <motion.a
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className="block text-dark-600 dark:text-dark-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"

@@ -3,18 +3,21 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Mail, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
-
-const roles = [
-  "Full-Stack Developer",
-  "AI Enthusiast",
-  "Backend Engineer",
-  "Problem Solver",
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Hero() {
+  const { t, language } = useLanguage();
+  const roles = t.hero.roles;
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    // Reset when language changes
+    setDisplayText("");
+    setRoleIndex(0);
+    setIsDeleting(false);
+  }, [language]);
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -39,7 +42,7 @@ export default function Hero() {
     );
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, roleIndex]);
+  }, [displayText, isDeleting, roleIndex, roles]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -95,7 +98,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="text-primary-500 dark:text-primary-400 font-mono text-sm md:text-base mb-4"
           >
-            Hi, my name is
+            {t.hero.greeting}
           </motion.p>
 
           {/* Name */}
@@ -105,7 +108,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4"
           >
-            <span className="gradient-text">Aditya Chutia</span>
+            <span className="gradient-text">{t.hero.name}</span>
           </motion.h1>
 
           {/* Animated Role */}
@@ -127,7 +130,7 @@ export default function Hero() {
             className="flex items-center justify-center gap-2 text-dark-500 dark:text-dark-400 mb-8"
           >
             <MapPin className="w-4 h-4" />
-            <span>Based in Osaka, Japan</span>
+            <span>{t.hero.location}</span>
           </motion.div>
 
           {/* Description */}
@@ -137,20 +140,19 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg md:text-xl text-dark-600 dark:text-dark-300 max-w-2xl mx-auto mb-10"
           >
-            I build intelligent applications that solve real-world problems.
-            Specializing in{" "}
+            {t.hero.description}{" "}
             <span className="text-primary-500 dark:text-primary-400 font-medium">
-              AI/ML
+              {t.hero.skills[0]}
             </span>
-            ,{" "}
+            {language === "en" ? ", " : "、"}
             <span className="text-primary-500 dark:text-primary-400 font-medium">
-              Python/Django
+              {t.hero.skills[1]}
             </span>
-            , and{" "}
+            {language === "en" ? ", and " : "、"}
             <span className="text-primary-500 dark:text-primary-400 font-medium">
-              full-stack development
+              {t.hero.skills[2]}
             </span>
-            .
+            {language === "ja" && "。"}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -166,7 +168,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View My Work
+              {t.hero.viewWork}
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </motion.a>
 
@@ -179,7 +181,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Github className="w-5 h-5" />
-              GitHub
+              {t.hero.github}
             </motion.a>
 
             <motion.a
@@ -189,7 +191,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Mail className="w-5 h-5" />
-              Contact Me
+              {t.hero.contactMe}
             </motion.a>
           </motion.div>
         </div>
@@ -206,7 +208,7 @@ export default function Hero() {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2 text-dark-400"
           >
-            <span className="text-sm">Scroll</span>
+            <span className="text-sm">{t.hero.scroll}</span>
             <ArrowDown className="w-4 h-4" />
           </motion.div>
         </motion.div>

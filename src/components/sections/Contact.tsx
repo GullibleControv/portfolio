@@ -2,41 +2,44 @@
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send, Github, Linkedin, FileText } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "adityachutia61@gmail.com",
-    href: "mailto:adityachutia61@gmail.com",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Osaka, Japan",
-    href: null,
-  },
-];
-
-const socialLinks = [
-  {
-    icon: Github,
-    label: "GitHub",
-    href: "https://github.com/GullibleControv",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/aditya-chutia",
-  },
-  {
-    icon: FileText,
-    label: "Resume",
-    href: "/resume.pdf",
-  },
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: t.contact.email,
+      value: "adityachutia61@gmail.com",
+      href: "mailto:adityachutia61@gmail.com",
+    },
+    {
+      icon: MapPin,
+      label: t.contact.location,
+      value: t.contact.locationValue,
+      href: null,
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/GullibleControv",
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/aditya-chutia",
+    },
+    {
+      icon: FileText,
+      label: "Resume",
+      href: "/resume.pdf",
+    },
+  ];
+
   return (
     <section id="contact" className="section-padding bg-dark-50 dark:bg-dark-900/50">
       <div className="container-custom">
@@ -49,11 +52,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In <span className="gradient-text">Touch</span>
+            {t.contact.title} <span className="gradient-text">{t.contact.titleHighlight}</span>
           </h2>
           <p className="text-dark-600 dark:text-dark-400 max-w-2xl mx-auto">
-            I&apos;m currently looking for new opportunities in Japan. Whether you
-            have a question or just want to say hi, feel free to reach out!
+            {t.contact.subtitle}
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full mt-4" />
         </motion.div>
@@ -69,7 +71,7 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+                <h3 className="text-xl font-bold mb-6">{t.contact.infoTitle}</h3>
                 <div className="space-y-4">
                   {contactInfo.map((info) => (
                     <div
@@ -102,7 +104,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-6">Connect With Me</h3>
+                <h3 className="text-xl font-bold mb-6">{t.contact.connectTitle}</h3>
                 <div className="flex gap-4">
                   {socialLinks.map((link) => (
                     <motion.a
@@ -133,12 +135,11 @@ export default function Contact() {
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                   </span>
                   <span className="font-medium text-green-600 dark:text-green-400">
-                    Open to Opportunities
+                    {t.contact.statusTitle}
                   </span>
                 </div>
                 <p className="text-sm text-dark-600 dark:text-dark-400">
-                  Currently seeking full-time positions in Japan. Available to start
-                  from April 2026.
+                  {t.contact.statusText}
                 </p>
               </motion.div>
             </motion.div>
@@ -156,14 +157,14 @@ export default function Contact() {
                     htmlFor="name"
                     className="block text-sm font-medium mb-2"
                   >
-                    Name
+                    {t.contact.form.name}
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     className="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
-                    placeholder="Your name"
+                    placeholder={t.contact.form.namePlaceholder}
                   />
                 </div>
 
@@ -172,14 +173,14 @@ export default function Contact() {
                     htmlFor="email"
                     className="block text-sm font-medium mb-2"
                   >
-                    Email
+                    {t.contact.form.email}
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     className="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
-                    placeholder="your@email.com"
+                    placeholder={t.contact.form.emailPlaceholder}
                   />
                 </div>
 
@@ -188,14 +189,14 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-sm font-medium mb-2"
                   >
-                    Message
+                    {t.contact.form.message}
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     className="w-full px-4 py-3 bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none resize-none"
-                    placeholder="Your message..."
+                    placeholder={t.contact.form.messagePlaceholder}
                   />
                 </div>
 
@@ -206,7 +207,7 @@ export default function Contact() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Send className="w-5 h-5" />
-                  Send Message
+                  {t.contact.form.send}
                 </motion.button>
               </form>
             </motion.div>

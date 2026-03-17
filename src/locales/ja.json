@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "about": "自己紹介",
+    "projects": "プロジェクト",
+    "experience": "経歴",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "greeting": "はじめまして",
+    "name": "チュティア アディティア",
+    "roles": ["フルスタック開発者", "AI エンジニア", "バックエンド開発者", "問題解決者"],
+    "location": "大阪在住",
+    "description": "実世界の課題を解決するインテリジェントなアプリケーションを開発しています。専門分野：",
+    "skills": ["AI/ML", "Python/Django", "フルスタック開発"],
+    "viewWork": "作品を見る",
+    "github": "GitHub",
+    "contactMe": "お問い合わせ",
+    "scroll": "スクロール"
+  },
+  "about": {
+    "title": "自己",
+    "titleHighlight": "紹介",
+    "bio1": "私は情熱を持った",
+    "role": "フルスタック開発者",
+    "bio1cont": "であり、インテリジェントなアプリケーション開発に注力しています。現在",
+    "locationHighlight": "大阪",
+    "bio1end": "在住で、クリーンなコードと最新のAI技術を組み合わせた開発を行っています。",
+    "bio2": "最近、",
+    "company": "Japan AI Consulting",
+    "bio2cont": "でインターンシップを修了しました。Django アプリケーションの開発、Playwright による自動テストシステムの構築、AI ソリューションの協働開発に従事しました。",
+    "bio3": "個人プロジェクトでは、RAG技術を活用した",
+    "project1": "AI自動応答SaaS",
+    "bio3cont": "や、YOLOリアルタイム検出を用いた",
+    "project2": "スマート駐車場システム",
+    "bio3end": "を開発しました。新しい技術を学び、困難な課題に取り組むことに常に意欲的です。",
+    "degree": "コンピュータサイエンス学士",
+    "jlpt": "JLPT N4",
+    "openTo": "求職中",
+    "categories": {
+      "languages": "言語",
+      "frameworks": "フレームワーク",
+      "aiml": "AI/ML",
+      "databases": "データベース",
+      "devops": "DevOps",
+      "tools": "ツール"
+    }
+  },
+  "projects": {
+    "title": "主な",
+    "titleHighlight": "プロジェクト",
+    "subtitle": "フルスタック開発、AI/ML、DevOps のスキルを示す最近のプロジェクトです。",
+    "viewCode": "コードを見る",
+    "liveDemo": "デモを見る",
+    "viewAll": "全てのプロジェクト",
+    "calbol": {
+      "subtitle": "AI自動応答SaaS",
+      "description": "RAG（検索拡張生成）を活用したAI搭載カスタマーサポート自動化プラットフォーム。キーワードマッチングとAIを組み合わせたハイブリッド応答システム、信頼度スコアリングと自動エスカレーション、マルチプラットフォーム対応を実現。",
+      "features": [
+        "インテリジェント応答のためのRAGパイプライン",
+        "マルチプラットフォーム対応：Email、WhatsApp、Instagram",
+        "信頼度スコアリングと人間へのエスカレーション",
+        "日英バイリンガル対応"
+      ]
+    },
+    "intellipark": {
+      "subtitle": "AIスマート駐車場システム",
+      "description": "YOLO11コンピュータビジョンを使用したリアルタイム駐車検出システム。ポリゴンベースの駐車スペースマッピング、競合検出付き予約システム、YouTube・RTSPストリームを含む複数のビデオソースに対応。",
+      "features": [
+        "YOLO11リアルタイム車両検出",
+        "キャンバスベースのポリゴン描画",
+        "競合検出付き予約システム",
+        "マルチソース対応：YouTube、RTSP、Webカメラ"
+      ]
+    },
+    "animenews": {
+      "subtitle": "ニュースアグリゲーター",
+      "description": "Jikan APIを使用した自動ETLパイプラインを持つDjangoベースのニュースプラットフォーム。Nginx、SSL、Render・Heroku・Railway向けマルチプラットフォームデプロイ設定を含む完全なDocker構成を実装。",
+      "features": [
+        "自動ETLパイプライン",
+        "Docker 3コンテナアーキテクチャ",
+        "Let's Encrypt SSL",
+        "マルチプラットフォームデプロイ"
+      ]
+    }
+  },
+  "experience": {
+    "title": "経歴・",
+    "titleHighlight": "学歴",
+    "subtitle": "私の職歴と学歴です。",
+    "workTitle": "職歴",
+    "educationTitle": "学歴",
+    "work": {
+      "title": "ソフトウェアエンジニア インターン",
+      "company": "Japan AI Consulting",
+      "location": "日本",
+      "date": "2025年12月 - 2026年3月",
+      "description": [
+        "Django/Pythonを使用した自社プロダクトの機能開発・保守",
+        "Playwrightを使用した包括的なE2Eテスト自動化スイートの構築",
+        "Docker、PostgreSQL、Redisを使用した開発・デプロイ",
+        "バグ修正、機能実装、QAテストでチームと協力"
+      ]
+    },
+    "education": {
+      "title": "コンピュータサイエンス学士",
+      "company": "アッサム・カジランガ大学",
+      "location": "インド・アッサム州",
+      "date": "2021年9月 - 2025年5月",
+      "description": [
+        "ソフトウェア開発とコンピュータサイエンスの基礎を専攻",
+        "カリキュラムの一環として複数のフルスタックプロジェクトを開発",
+        "データ構造、アルゴリズム、システム設計の強固な基礎を習得"
+      ]
+    }
+  },
+  "contact": {
+    "title": "お問い",
+    "titleHighlight": "合わせ",
+    "subtitle": "現在、日本での新しい機会を探しています。ご質問やご挨拶など、お気軽にご連絡ください！",
+    "infoTitle": "連絡先情報",
+    "email": "メール",
+    "location": "所在地",
+    "locationValue": "大阪府",
+    "connectTitle": "SNS",
+    "statusTitle": "求職中",
+    "statusText": "現在、日本でのフルタイムポジションを探しています。2026年4月から勤務可能です。",
+    "form": {
+      "name": "お名前",
+      "namePlaceholder": "お名前",
+      "email": "メールアドレス",
+      "emailPlaceholder": "your@email.com",
+      "message": "メッセージ",
+      "messagePlaceholder": "メッセージを入力してください...",
+      "send": "送信する"
+    }
+  },
+  "footer": {
+    "builtWith": "作成者：",
+    "by": "チュティア アディティア"
+  }
+}

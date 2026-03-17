@@ -2,39 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
-
-const experiences = [
-  {
-    type: "work",
-    title: "Software Engineer Intern",
-    company: "Japan AI Consulting",
-    location: "Japan",
-    date: "Dec 2025 - Mar 2026",
-    description: [
-      "Developed and maintained features for the company's main product using Django and Python",
-      "Built comprehensive E2E test automation suite using Playwright",
-      "Worked with Docker, PostgreSQL, and Redis for development and deployment",
-      "Collaborated with the team on bug fixes, feature implementation, and QA testing",
-    ],
-    skills: ["Python", "Django", "PostgreSQL", "Docker", "Playwright", "Redis"],
-  },
-];
-
-const education = [
-  {
-    type: "education",
-    title: "Bachelor of Science in Computer Science",
-    company: "Assam Kaziranga University",
-    location: "Assam, India",
-    date: "Sep 2021 - May 2025",
-    description: [
-      "Specialized in software development and computer science fundamentals",
-      "Developed multiple full-stack projects as part of coursework",
-      "Gained strong foundation in data structures, algorithms, and system design",
-    ],
-    skills: ["Data Structures", "Algorithms", "Software Engineering", "Databases"],
-  },
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -144,6 +112,32 @@ function TimelineItem({ item, index }: TimelineItemProps) {
 }
 
 export default function Experience() {
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      type: "work",
+      title: t.experience.work.title,
+      company: t.experience.work.company,
+      location: t.experience.work.location,
+      date: t.experience.work.date,
+      description: t.experience.work.description,
+      skills: ["Python", "Django", "PostgreSQL", "Docker", "Playwright", "Redis"],
+    },
+  ];
+
+  const education = [
+    {
+      type: "education",
+      title: t.experience.education.title,
+      company: t.experience.education.company,
+      location: t.experience.education.location,
+      date: t.experience.education.date,
+      description: t.experience.education.description,
+      skills: ["Data Structures", "Algorithms", "Software Engineering", "Databases"],
+    },
+  ];
+
   return (
     <section id="experience" className="section-padding">
       <div className="container-custom">
@@ -156,10 +150,10 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Experience & <span className="gradient-text">Education</span>
+            {t.experience.title} <span className="gradient-text">{t.experience.titleHighlight}</span>
           </h2>
           <p className="text-dark-600 dark:text-dark-400 max-w-2xl mx-auto">
-            My professional journey and academic background.
+            {t.experience.subtitle}
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full mt-4" />
         </motion.div>
@@ -174,7 +168,7 @@ export default function Experience() {
               className="text-xl font-bold mb-8 flex items-center gap-2"
             >
               <Briefcase className="w-5 h-5 text-primary-500" />
-              Work Experience
+              {t.experience.workTitle}
             </motion.h3>
             <motion.div
               variants={containerVariants}
@@ -197,7 +191,7 @@ export default function Experience() {
               className="text-xl font-bold mb-8 flex items-center gap-2"
             >
               <GraduationCap className="w-5 h-5 text-primary-500" />
-              Education
+              {t.experience.educationTitle}
             </motion.h3>
             <motion.div
               variants={containerVariants}
