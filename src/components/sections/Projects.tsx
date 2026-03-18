@@ -101,7 +101,7 @@ export default function Projects() {
               >
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className={`relative aspect-video rounded-2xl bg-gradient-to-br ${project.color} p-8 flex items-center justify-center overflow-hidden`}
+                  className={`relative aspect-video rounded-xl sm:rounded-2xl bg-gradient-to-br ${project.color} p-4 sm:p-8 flex items-center justify-center overflow-hidden`}
                 >
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
@@ -116,19 +116,19 @@ export default function Projects() {
                     transition={{ delay: 0.2 }}
                     className="relative z-10"
                   >
-                    <project.icon className="w-32 h-32 text-white/90" />
+                    <project.icon className="w-20 h-20 sm:w-32 sm:h-32 text-white/90" />
                   </motion.div>
 
                   {/* Floating elements */}
                   <motion.div
                     animate={{ y: [-10, 10, -10] }}
                     transition={{ duration: 4, repeat: Infinity }}
-                    className="absolute top-8 right-8 w-16 h-16 bg-white/10 rounded-xl backdrop-blur-sm"
+                    className="absolute top-4 right-4 sm:top-8 sm:right-8 w-10 h-10 sm:w-16 sm:h-16 bg-white/10 rounded-xl backdrop-blur-sm"
                   />
                   <motion.div
                     animate={{ y: [10, -10, 10] }}
                     transition={{ duration: 5, repeat: Infinity }}
-                    className="absolute bottom-8 left-8 w-12 h-12 bg-white/10 rounded-lg backdrop-blur-sm"
+                    className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 w-8 h-8 sm:w-12 sm:h-12 bg-white/10 rounded-lg backdrop-blur-sm"
                   />
                 </motion.div>
               </div>
@@ -147,7 +147,7 @@ export default function Projects() {
                   </div>
 
                   {/* Description Card */}
-                  <div className="p-6 bg-white dark:bg-dark-800 rounded-xl shadow-lg shadow-dark-900/5 dark:shadow-dark-950/50">
+                  <div className="p-4 sm:p-6 bg-white dark:bg-dark-800 rounded-xl shadow-lg shadow-dark-900/5 dark:shadow-dark-950/50">
                     <p className="text-dark-600 dark:text-dark-300 leading-relaxed">
                       {project.description}
                     </p>
@@ -171,7 +171,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-sm font-mono bg-dark-100 dark:bg-dark-700 text-dark-600 dark:text-dark-300 rounded-full"
+                        className="px-2 sm:px-3 py-1 text-xs sm:text-sm font-mono bg-dark-100 dark:bg-dark-700 text-dark-600 dark:text-dark-300 rounded-full"
                       >
                         {tag}
                       </span>

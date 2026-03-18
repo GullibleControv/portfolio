@@ -121,22 +121,28 @@ export default function About() {
               {t.about.bio3end}
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
-                <span className="text-2xl">🎓</span>
-                <span className="text-sm text-dark-600 dark:text-dark-300">
+            <div className="flex flex-wrap gap-3 pt-4">
+              <div className="flex items-center gap-2 px-3 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
+                <span className="text-xl">🎓</span>
+                <span className="text-xs sm:text-sm text-dark-600 dark:text-dark-300">
                   {t.about.degree}
                 </span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
-                <span className="text-2xl">🇯🇵</span>
-                <span className="text-sm text-dark-600 dark:text-dark-300">
+              <div className="flex items-center gap-2 px-3 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
+                <span className="text-xl">🇯🇵</span>
+                <span className="text-xs sm:text-sm text-dark-600 dark:text-dark-300">
                   {t.about.jlpt}
                 </span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
-                <span className="text-2xl">💼</span>
-                <span className="text-sm text-dark-600 dark:text-dark-300">
+              <div className="flex items-center gap-2 px-3 py-2 bg-dark-100 dark:bg-dark-800 rounded-lg">
+                <span className="text-xl">📚</span>
+                <span className="text-xs sm:text-sm text-dark-600 dark:text-dark-300">
+                  {t.about.languageSchool}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-2 bg-primary-500/10 border border-primary-500/30 rounded-lg">
+                <span className="text-xl">💼</span>
+                <span className="text-xs sm:text-sm text-primary-600 dark:text-primary-400 font-medium">
                   {t.about.openTo}
                 </span>
               </div>
@@ -149,15 +155,15 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
           >
             {techCategories.map((category) => (
               <motion.div
                 key={category.titleKey}
                 variants={itemVariants}
-                className="group p-4 bg-white dark:bg-dark-900 rounded-xl border border-dark-200 dark:border-dark-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all card-hover"
+                className="group p-3 sm:p-4 bg-white dark:bg-dark-900 rounded-xl border border-dark-200 dark:border-dark-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all card-hover"
               >
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                   <div
                     className={`p-2 rounded-lg bg-gradient-to-br ${category.color}`}
                   >

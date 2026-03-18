@@ -61,25 +61,25 @@ export default function Contact() {
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
             >
               <div>
-                <h3 className="text-xl font-bold mb-6">{t.contact.infoTitle}</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{t.contact.infoTitle}</h3>
                 <div className="space-y-4">
                   {contactInfo.map((info) => (
                     <div
                       key={info.label}
-                      className="flex items-center gap-4 p-4 bg-white dark:bg-dark-800 rounded-xl"
+                      className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white dark:bg-dark-800 rounded-xl"
                     >
-                      <div className="p-3 bg-primary-500/10 rounded-lg">
-                        <info.icon className="w-5 h-5 text-primary-500" />
+                      <div className="p-2 sm:p-3 bg-primary-500/10 rounded-lg flex-shrink-0">
+                        <info.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-500" />
                       </div>
                       <div>
                         <p className="text-sm text-dark-500 dark:text-dark-400">
@@ -88,7 +88,7 @@ export default function Contact() {
                         {info.href ? (
                           <a
                             href={info.href}
-                            className="text-dark-900 dark:text-dark-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                            className="text-sm sm:text-base text-dark-900 dark:text-dark-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors break-all"
                           >
                             {info.value}
                           </a>
@@ -104,7 +104,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-6">{t.contact.connectTitle}</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">{t.contact.connectTitle}</h3>
                 <div className="flex gap-4">
                   {socialLinks.map((link) => (
                     <motion.a
@@ -112,7 +112,7 @@ export default function Contact() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center w-12 h-12 bg-white dark:bg-dark-800 rounded-xl hover:bg-primary-500 hover:text-white transition-all shadow-lg shadow-dark-900/5 dark:shadow-dark-950/50"
+                      className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-dark-800 rounded-xl hover:bg-primary-500 hover:text-white transition-all shadow-lg shadow-dark-900/5 dark:shadow-dark-950/50"
                       whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -127,7 +127,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 bg-gradient-to-br from-primary-500/10 to-primary-600/10 rounded-xl border border-primary-500/20"
+                className="p-4 sm:p-6 bg-gradient-to-br from-primary-500/10 to-primary-600/10 rounded-xl border border-primary-500/20"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <span className="relative flex h-3 w-3">
@@ -151,7 +151,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <form className="space-y-6">
+              <form className="space-y-4 sm:space-y-6">
                 <div>
                   <label
                     htmlFor="name"

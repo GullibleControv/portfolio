@@ -40,7 +40,7 @@ function TimelineItem({ item, index }: TimelineItemProps) {
   const Icon = item.type === "work" ? Briefcase : GraduationCap;
 
   return (
-    <motion.div variants={itemVariants} className="relative pl-8 pb-12 last:pb-0">
+    <motion.div variants={itemVariants} className="relative pl-6 sm:pl-8 pb-8 sm:pb-12 last:pb-0">
       {/* Timeline Line */}
       <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 to-primary-600" />
 
@@ -50,21 +50,21 @@ function TimelineItem({ item, index }: TimelineItemProps) {
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
         transition={{ delay: index * 0.1 }}
-        className="absolute left-0 top-0 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-500/30"
+        className="absolute left-0 top-0 -translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-500/30"
       >
-        <Icon className="w-5 h-5 text-white" />
+        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
       </motion.div>
 
       {/* Content */}
-      <div className="ml-6">
+      <div className="ml-4 sm:ml-6">
         <motion.div
           whileHover={{ scale: 1.01 }}
-          className="p-6 bg-white dark:bg-dark-800 rounded-xl shadow-lg shadow-dark-900/5 dark:shadow-dark-950/50 border border-dark-200 dark:border-dark-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all"
+          className="p-4 sm:p-6 bg-white dark:bg-dark-800 rounded-xl shadow-lg shadow-dark-900/5 dark:shadow-dark-950/50 border border-dark-200 dark:border-dark-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all"
         >
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
             <div>
-              <h3 className="text-xl font-bold">{item.title}</h3>
+              <h3 className="text-lg sm:text-xl font-bold">{item.title}</h3>
               <p className="text-primary-500 dark:text-primary-400 font-medium">
                 {item.company}
               </p>
@@ -99,7 +99,7 @@ function TimelineItem({ item, index }: TimelineItemProps) {
             {item.skills.map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1 text-xs font-medium bg-primary-500/10 text-primary-600 dark:text-primary-400 rounded-full"
+                className="px-2 sm:px-3 py-1 text-xs font-medium bg-primary-500/10 text-primary-600 dark:text-primary-400 rounded-full"
               >
                 {skill}
               </span>
@@ -127,6 +127,15 @@ export default function Experience() {
   ];
 
   const education = [
+    {
+      type: "education",
+      title: t.experience.languageSchool.title,
+      company: t.experience.languageSchool.company,
+      location: t.experience.languageSchool.location,
+      date: t.experience.languageSchool.date,
+      description: t.experience.languageSchool.description,
+      skills: ["Japanese", "JLPT N3", "Business Japanese"],
+    },
     {
       type: "education",
       title: t.experience.education.title,
@@ -158,7 +167,7 @@ export default function Experience() {
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full mt-4" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Work Experience */}
           <div>
             <motion.h3

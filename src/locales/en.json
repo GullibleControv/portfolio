@@ -35,7 +35,8 @@
     "bio3end": "with YOLO real-time detection. I'm always excited to learn new technologies and tackle challenging problems.",
     "degree": "B.Sc. Computer Science",
     "jlpt": "JLPT N4",
-    "openTo": "Open to Opportunities",
+    "openTo": "Seeking Internship/Part-time",
+    "languageSchool": "Japanese Language Student",
     "categories": {
       "languages": "Languages",
       "frameworks": "Frameworks",
@@ -111,6 +112,17 @@
         "Developed multiple full-stack projects as part of coursework",
         "Gained strong foundation in data structures, algorithms, and system design"
       ]
+    },
+    "languageSchool": {
+      "title": "Japanese Language Course",
+      "company": "iSEIFU Japanese Language School (清風情報工科学院)",
+      "location": "Abeno-ku, Osaka",
+      "date": "2025 - Present",
+      "description": [
+        "Intensive Japanese language program with daily classes",
+        "Preparing for JLPT N3 certification",
+        "Immersive learning environment with students from various countries"
+      ]
     }
   },
   "contact": {
@@ -123,7 +135,7 @@
     "locationValue": "Osaka, Japan",
     "connectTitle": "Connect With Me",
     "statusTitle": "Open to Opportunities",
-    "statusText": "Currently seeking full-time positions in Japan. Available to start from April 2026.",
+    "statusText": "Currently seeking internship or part-time roles in Japan while studying Japanese. Available for flexible schedules.",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your name",
