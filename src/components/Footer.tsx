@@ -17,7 +17,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/aditya-chutia",
+    href: "https://www.linkedin.com/in/aditya-chutia-555027202/",
     icon: Linkedin,
   },
 ];
