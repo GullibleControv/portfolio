@@ -1,5 +1,5 @@
 "use client";
-
+// Social links updated: March 2026
 import { motion } from "framer-motion";
 import { Github, Mail, Linkedin, Heart } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
