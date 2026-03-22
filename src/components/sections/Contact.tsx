@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, Github, Linkedin, FileText, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
 interface FormData {
@@ -55,11 +55,6 @@ export default function Contact() {
       icon: Linkedin,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/aditya-chutia-555027202/",
-    },
-    {
-      icon: FileText,
-      label: "Resume",
-      href: "/resume.pdf",
     },
   ];
 

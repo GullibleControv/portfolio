@@ -33,7 +33,7 @@
     "bio3cont": "using RAG technology and a",
     "project2": "smart parking system",
     "bio3end": "with YOLO real-time detection. I'm always excited to learn new technologies and tackle challenging problems.",
-    "degree": "B.Sc. Computer Science",
+    "degree": "B.Tech Computer Science",
     "jlpt": "JLPT N4",
     "openTo": "Seeking Internship/Part-time",
     "languageSchool": "Japanese Language Student",
@@ -51,7 +51,6 @@
     "titleHighlight": "Projects",
     "subtitle": "Here are some of my recent projects that showcase my skills in full-stack development, AI/ML, and DevOps.",
     "viewCode": "View Code",
-    "liveDemo": "Live Demo",
     "viewAll": "View All Projects",
     "calbol": {
       "subtitle": "AI Auto-Reply SaaS",
@@ -103,7 +102,7 @@
       ]
     },
     "education": {
-      "title": "Bachelor of Science in Computer Science",
+      "title": "Bachelor of Technology in Computer Science",
       "company": "Assam Kaziranga University",
       "location": "Assam, India",
       "date": "Sep 2021 - May 2025",
