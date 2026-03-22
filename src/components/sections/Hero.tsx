@@ -116,7 +116,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-5xl font-bold text-dark-500 dark:text-dark-400 mb-6 h-[1.2em]"
+            className="text-xl xs:text-2xl sm:text-3xl md:text-5xl font-bold text-dark-500 dark:text-dark-400 mb-6 min-h-[1.5em] sm:min-h-[1.2em]"
           >
             <span>{displayText}</span>
             <span className="animate-pulse text-primary-500">|</span>
@@ -160,39 +160,44 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0"
           >
             <motion.a
               href="#projects"
-              className="group px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-all flex items-center gap-2"
+              className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="View my projects"
             >
               {t.hero.viewWork}
-              <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+              <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" aria-hidden="true" />
             </motion.a>
 
-            <motion.a
-              href="https://github.com/GullibleControv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-dark-300 dark:border-dark-600 hover:border-primary-500 dark:hover:border-primary-500 rounded-lg font-medium transition-all flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Github className="w-5 h-5" />
-              {t.hero.github}
-            </motion.a>
+            <div className="flex gap-3 sm:gap-4 w-full sm:w-auto">
+              <motion.a
+                href="https://github.com/GullibleControv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 sm:flex-none px-4 sm:px-8 py-3 sm:py-4 border-2 border-dark-300 dark:border-dark-600 hover:border-primary-500 dark:hover:border-primary-500 rounded-lg font-medium transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="View GitHub profile"
+              >
+                <Github className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+                <span className="hidden xs:inline">{t.hero.github}</span>
+              </motion.a>
 
-            <motion.a
-              href="mailto:adityachutia61@gmail.com"
-              className="px-8 py-4 border-2 border-dark-300 dark:border-dark-600 hover:border-primary-500 dark:hover:border-primary-500 rounded-lg font-medium transition-all flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="w-5 h-5" />
-              {t.hero.contactMe}
-            </motion.a>
+              <motion.a
+                href="mailto:adityachutia61@gmail.com"
+                className="flex-1 sm:flex-none px-4 sm:px-8 py-3 sm:py-4 border-2 border-dark-300 dark:border-dark-600 hover:border-primary-500 dark:hover:border-primary-500 rounded-lg font-medium transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Send email"
+              >
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+                <span className="hidden xs:inline">{t.hero.contactMe}</span>
+              </motion.a>
+            </div>
           </motion.div>
         </div>
 

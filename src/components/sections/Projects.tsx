@@ -187,8 +187,9 @@ export default function Projects() {
                       className="flex items-center gap-2 text-dark-600 dark:text-dark-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      aria-label={`View ${project.title} source code on GitHub`}
                     >
-                      <Github className="w-5 h-5" />
+                      <Github className="w-5 h-5" aria-hidden="true" />
                       <span>{t.projects.viewCode}</span>
                     </motion.a>
                   </div>

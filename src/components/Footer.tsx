@@ -53,7 +53,7 @@ export default function Footer() {
           </motion.p>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <nav className="flex items-center gap-4" aria-label="Social links">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.name}
@@ -67,11 +67,12 @@ export default function Footer() {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label={link.name}
               >
-                <link.icon className="w-5 h-5" />
+                <link.icon className="w-5 h-5" aria-hidden="true" />
               </motion.a>
             ))}
-          </div>
+          </nav>
 
           {/* Location */}
           <motion.p
